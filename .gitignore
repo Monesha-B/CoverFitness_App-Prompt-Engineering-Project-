@@ -1,0 +1,5 @@
+openai_key.txt
+venv/
+venv310/
+__pycache__/
+

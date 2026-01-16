@@ -5,9 +5,10 @@ from langchain_core.output_parsers import StrOutputParser
 import json
 import os
 
-with open("openai_key.txt", "r") as f:
-    key = f.read().strip()
-    os.environ["OPENAI_API_KEY"] = key
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
+if not openai_api_key:
+    raise RuntimeError("OPENAI_API_KEY is not set")
 
 def get_openai_llm(temperature=0):
     return ChatOpenAI(model="gpt-3.5-turbo", temperature=temperature)
