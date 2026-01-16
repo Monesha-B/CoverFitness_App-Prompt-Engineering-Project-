@@ -5,6 +5,7 @@ from langchain_core.output_parsers import StrOutputParser
 import json
 import os
 
+
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 if not openai_api_key:
